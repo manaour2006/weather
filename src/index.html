@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <title>Weather</title>
+</head>
+
+<body id="vanta" class="p-0 m-0 font-sans box-border flex items-center justify-center h-screen">
+    <div id="vanta" class="w-full max-w-sm sm:max-w-md md:max-w-lg shadow-[0_4px_30px_-4px_rgba(0,0,0,0.5)] rounded-xl border-black p-6 text-white relative z-10">
+        <div class="flex justify-center items-center gap-3 mb-6">
+            <input id="cityInput" class="text-slate-700 p-2 rounded-xl w-3/4 bg-white placeholder-gray-500" type="text"
+                placeholder="Enter city name" spellcheck="false">
+            <button id="searchBtn" class="rounded-full p-2 bg-white">
+                <img class="w-[20px] h-[20px]" src="search.png" alt="Search">
+            </button>
+        </div>
+
+        <div class="flex flex-col items-center gap-2 mb-6">
+            <img id="weatherIcon" class="w-[100px] h-[100px]" src="rain.png" alt="Weather icon">
+            <h1 id="temperature" class="text-3xl font-bold">--°C</h1>
+            <h2 id="cityName" class="text-lg font-medium">City</h2>
+        </div>
+
+        <div class="flex flex-wrap justify-around items-center text-center">
+            <div class="flex items-center">
+                <img class="w-[30px] h-[30px] mb-1" src="humidity.png" alt="Humidity">
+                <div class="flex flex-col ml-1">
+                    <p id="humidity" class="font-bold">--%</p>
+                    <p class="text-sm">Humidity</p>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <img class="w-[30px] h-[30px] mb-1" src="wind.png" alt="Wind Speed">
+                <div class="flex flex-col ml-1">
+                    <p id="wind" class="font-bold">-- km/h</p>
+                    <p class="text-sm">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.clouds2.min.js"></script>
+<script>
+    VANTA.CLOUDS2({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        skyColor: 0xff7e5f,  
+        cloudColor: 0x0D9488, 
+        speed: 1.5,           
+        texturePath: "noise.png"
+    })
+</script>
+
+</body>
+
+</html>
